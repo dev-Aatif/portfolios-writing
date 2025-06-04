@@ -353,10 +353,12 @@
             color: var(--light);
             padding: 40px;
             border-radius: 10px;
+            margin-left: 400px;
+            width: 50%;
         }
 
         .contact-info h3 {
-            font-size: 28px;
+            font-size: 25px;
             margin-bottom: 25px;
         }
 
