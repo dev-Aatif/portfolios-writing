@@ -213,62 +213,75 @@
         }
 
         /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
+       .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .about-text {
-            flex: 1;
-        }
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: var(--dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin: 40px auto;
+    border-top: 4px solid #4e73df;
+}
 
-        .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--light);
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: var(--gray);
-        }
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--light);
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
+/* About Content */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
 
-        .skill {
-            background-color: var(--secondary);
-            color: var(--light);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+.about-text h3 {
+    font-size: 1.75rem;
+    color: var(--light);
+    margin-bottom: 24px;
+}
 
-        .about-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--light);
+    margin-bottom: 24px;
+}
 
-        .profile-img {
-            width: 100%;
-            max-width: 400px;
-            height: 400px;
-            background: linear-gradient(45deg, var(--secondary), #6c3483);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light);
-            font-size: 100px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
+.cta-heading {
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill {
+    background-color: var(--accent);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
 
         /* Portfolio Section */
         .portfolio {
