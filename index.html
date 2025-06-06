@@ -3,275 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="js.js"></script>
+    <title>Aatif P | Writer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2c5282',
+                        accent: '#f6ad55',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-pattern {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .service-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .service-badge:hover {
+            background-color: #f6ad55;
+            color: #1a365d;
+            transform: scale(1.05);
+        }
+        
+        .gradient-divider {
+            height: 4px;
+            background: linear-gradient(to right, #1a365d, #2c5282, #f6ad55);
+        }
+        
+        .social-icon:hover {
+            color: #f6ad55;
+            transform: scale(1.2);
+        }
+    </style>
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Aatif<span>P</span></a>
-                <ul class="nav-links" id="navLinks">
-                    <!-- <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Blogs</a></li> -->
-                    <li><a href="#contact" class="btn">Get in Touch</a></li>          
-                </ul>
-                <div class="mobile-menu" id="mobileMenu">
-                    <i class="fas fa-bars"></i>
-                    
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#hero" class="text-primary text-xl font-bold">Aatif P</a>
                 </div>
-            </nav>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary transition">Work</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition transform hover:-translate-y-1">Get in Touch</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-primary">About</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-primary">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-primary">Work</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1> I Write</h1>
-                <p>Contact me if you like my Work</p>
-                <a href="#portfolio" class="btn">Explore My Work</a>
+    <section id="hero" class="hero-pattern text-white pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center md:text-left md:flex items-center justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        I <span class="text-accent">Write</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-200 max-w-2xl">
+                        Contact me if you like my work and want to collaborate on your next writing project.
+                    </p>
+                    <a href="#portfolio" class="mt-8 inline-block bg-accent text-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white transition transform hover:-translate-y-1 shadow-lg">
+                        Explore My Work
+                    </a>
+                </div>
+                <div class="hidden md:block md:w-2/5 mt-10 md:mt-0">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full border-4 border-accent rounded-2xl transform rotate-6"></div>
+                        <img src="./asssets/write.webp" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <!-- About Section -->
-     <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who am I?</h2>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Who am I?</h2>
+                <div class="w-24 h-1 gradient-divider mx-auto rounded mb-16"></div>
             </div>
-            <div class="about-content">
-               <div class="about-text">
-                    <h3>Aatif P.</h3>
-                    <p>With a year dedicated to refining my craft, I adeptly adapt my voice—whether technical, conversational, or seamlessly invisible as a ghostwriter—to meet specific project demands.</p>
-                    <p>Committed to continuous skill development and delivering genuine value, I approach writing as a process of exploration and understanding.</p>
-                    <h2 class="cta-heading">Seeking a dedicated, hardworking, adaptable writer who delivers on time? Contact me</h2>
-
-                    <div class="skills">
-                        <span class="skill">Tech Writing</span>
-                        <span class="skill">SEO Writing</span>
-                        <span class="skill">Technical Writing</span>
-                        <span class="skill">Editing & Proofreading</span>
-                        <span class="skill">Copy Writing</span>
-                        <span class="skill">Speech Writing</span>
-                        <span class="skill">UX Writing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Some of my work</h2>
-                <h3>Explore the Best of Me</h3>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Blog Card 1 -->
-                <div class="blog-card" onclick="window.location.href='#';">
-                    
-                   <img class="img" src="./asssets/image.jpg" alt="">
-
-                    <div class="blog-content">
-                        <span class="blog-category">Tech Writing</span>
-                        <h2>Nintendo Switch 2 Launch Day: The Ultimate Hands-On Guide for Gamers</h2>
-                        <h5>Nintendo Switch 2 Unboxed: 12 Game-Changing Features, Pricing Realities, and Why It’s Worth the Upgrade</h5>
-                        <a href="blogs/blog1.html" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Card 2 -->
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <img src="./asssets/SEO-4.jpg" alt="">
             
-                    <div class="blog-content">
-                        <span class="blog-category">SEO Writing</span>
-                        <h2>What Is SEO? (And How It Actually Works in 2025)</h2>
-                        <h5>SEO Unlocked: Your No-BS Guide to Ranking Higher & Getting Real Traffic.</h5>
-                        <a href="blogs/blog2.html" class="btn btn-outline">Read Article</a>
+            <div class="md:flex items-center">
+                <div class="md:w-1/3 flex justify-center mb-10 md:mb-0">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-primary">
+                    <img src="./asssets/profile.jpg" alt="">
                     </div>
                 </div>
                 
-                <!-- Blog Card 3 -->
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Ai Ethics</span>
-                        <h2></h2>
-                        <h5></h5>
-                        <a href="blogs/blog3.html" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Card 4
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #9b59b6, #34495e);">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Cultural Writing</span>
-                        <h3>Writing for Global Audiences</h3>
-                        <p>Navigating cultural nuances and creating content that resonates across borders and languages.</p>
-                        <a href="blogs/4" class="btn btn-outline">Read Article</a>
+                <div class="md:w-2/3">
+                    <h3 class="text-3xl font-bold text-primary mb-4">Aatif P.</h3>
+                    <p class="text-gray-700 text-lg mb-6">
+                        With a year dedicated to refining my craft, I adeptly adapt my voice—whether technical, conversational, or seamlessly invisible as a ghostwriter—to meet specific project demands.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-6">
+                        Committed to continuous skill development and delivering genuine value, I approach writing as a process of exploration and understanding.
+                    </p>
+                    <div class="bg-gray-100 rounded-xl p-6 border-l-4 border-accent">
+                        <p class="text-lg font-medium text-gray-800">
+                            Seeking a dedicated, hardworking, adaptable writer who delivers on time? 
+                            <a href="#contact" class="text-primary hover:text-secondary font-bold">Contact me</a>
+                        </p>
                     </div>
                 </div>
-                
-                Blog Card 5
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #1abc9c, #16a085);">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Psychology</span>
-                        <h3>The Psychology of Persuasive Writing</h3>
-                        <p>Understanding cognitive biases and psychological triggers that make writing more compelling.</p>
-                        <a href="blogs/5" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                Blog Card 6 
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #f1c40f, #e67e22);">
-                        <i class="fas fa-pen-fancy"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Creative Process</span>
-                        <h3>Finding Your Unique Writing Voice</h3>
-                        <p>A journey to discovering and refining the authentic voice that sets your writing apart.</p>
-                        <a href="blogs/6" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                Blog Card 7
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">SEO Writing</span>
-                        <h3>Beyond Keywords: Modern SEO Writing</h3>
-                        <p>How to create content that satisfies both search engines and human readers in 2023.</p>
-                        <a href="blogs/7" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                Blog Card 8
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #3498db, #2980b9);">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Historical Writing</span>
-                        <h3>Lessons from Literary Giants</h3>
-                        <p>Timeless writing techniques from history's greatest authors and how to apply them today.</p>
-                        <a href="blogs/8" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                Blog Card 9 
-                <div class="blog-card" onclick="window.location.href='#';">
-                    <div class="blog-img" style="background: linear-gradient(45deg, #2c3e50, #7f8c8d);">
-                        <i class="fas fa-future"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-category">Future Trends</span>
-                        <h3>The Future of Content Creation</h3>
-                        <p>How AI and emerging technologies are changing the writing landscape and what it means for creators.</p>
-                        <a href="blogs/9" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
-
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">What I Do</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Professional writing services tailored to your needs</p>
+                <div class="w-24 h-1 gradient-divider mx-auto rounded my-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">Tech Writing</h4>
+                </div>
+                
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">SEO Writing</h4>
+                </div>
+                
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-file-alt text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">Technical Writing</h4>
+                </div>
+                
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-spell-check text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">Editing & Proofreading</h4>
+                </div>
+                
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-copy text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">Copy Writing</h4>
+                </div>
+                
+                <div class="service-badge bg-white rounded-xl p-6 text-center shadow-md cursor-pointer">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                    </div>
+                    <h4 class="mt-4 font-bold text-gray-800">Speech Writing</h4>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl shadow-xl p-8 max-w-4xl mx-auto flex items-center">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-user-edit text-white text-2xl"></i>
+                </div>
+                <div class="ml-6">
+                    <h3 class="text-xl font-bold text-primary">UX Writing</h3>
+                    <p class="text-gray-600 mt-2">Crafting user-centered copy that guides, informs, and delights users at every interaction point.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">Some of my work</h2>
+                <p class="text-xl text-gray-600">Explore the best of my writing portfolio</p>
+                <div class="w-24 h-1 gradient-divider mx-auto rounded mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-card bg-gray-50 rounded-xl overflow-hidden transition duration-300">
+                    <img src="./asssets/image.jpg" alt="Nintendo ahhh">
+                    <div class="p-8">
+                        <span class="inline-block px-3 py-1 bg-accent text-primary rounded-full text-sm font-semibold">Tech Writing</span>
+                        <h3 class="text-2xl font-bold text-primary mt-4">Nintendo Switch 2 Launch Day: The Ultimate Hands-On Guide for Gamers</h3>
+                        <p class="text-gray-600 mt-3 font-light">Nintendo Switch 2 Unboxed: 12 Game-Changing Features, Pricing Realities, and Why It's Worth the Upgrade</p>
+                        <a href="./blogs/blog1.html" class="mt-6 inline-flex items-center text-primary font-semibold group">
+                            Read Article
+                            <i class="fas fa-arrow-right ml-2 transition group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-card bg-gray-50 rounded-xl overflow-hidden transition duration-300">
+                    <img src="./asssets/SEO-4.jpg" alt="SEO ahhh">
+                    <div class="p-8">
+                        <span class="inline-block px-3 py-1 bg-accent text-primary rounded-full text-sm font-semibold">SEO Writing</span>
+                        <h3 class="text-2xl font-bold text-primary mt-4">What Is SEO? (And How It Actually Works in 2025)</h3>
+                        <p class="text-gray-600 mt-3 font-light">SEO Unlocked: Your No-BS Guide to Ranking Higher & Getting Real Traffic.</p>
+                        <a href="./blogs/blog2.html" class="mt-6 inline-flex items-center text-primary font-semibold group">
+                            Read Article
+                            <i class="fas fa-arrow-right ml-2 transition group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-card bg-gray-50 rounded-xl overflow-hidden transition duration-300">
+                    <div class="h-64" style="background-image: url('https://images.unsplash.com/photo-1677442135722-5f8ea49d5d2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="p-8">
+                        <span class="inline-block px-3 py-1 bg-accent text-primary rounded-full text-sm font-semibold">AI Ethics</span>
+                        <h3 class="text-2xl font-bold text-primary mt-4">Navigating the Moral Maze of Artificial Intelligence</h3>
+                        <p class="text-gray-600 mt-3 font-light">Understanding Bias, Privacy, and Responsibility in the Age of Machine Learning</p>
+                        <a href="https://portfolio-aatif-p.netlify.app/blogs/blog3.html" class="mt-6 inline-flex items-center text-primary font-semibold group">
+                            Read Article
+                            <i class="fas fa-arrow-right ml-2 transition group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-card bg-gray-50 rounded-xl overflow-hidden transition duration-300">
+                    <div class="h-64" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="p-8">
+                        <span class="inline-block px-3 py-1 bg-accent text-primary rounded-full text-sm font-semibold">UX Writing</span>
+                        <h3 class="text-2xl font-bold text-primary mt-4">The Art of Microcopy</h3>
+                        <p class="text-gray-600 mt-3 font-light">Small Words, Big Impact: How Tiny Text Pieces Create Seamless Digital Experiences</p>
+                        <a href="#" class="mt-6 inline-flex items-center text-primary font-semibold group">
+                            Read Article
+                            <i class="fas fa-arrow-right ml-2 transition group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="./portfolio.html" class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-secondary transition transform hover:-translate-y-1 shadow-lg">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <h4>Ready to start your next writing project?</h4>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Work Together</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+    <section id="contact" class="py-20 hero-pattern text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center justify-between">
+            <div class="md:w-1/2 md:pr-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <h3 class="text-2xl font-light text-accent mb-8">Ready to start your next writing project?</h3>
+                <p class="text-xl mb-10">Let me help bring your ideas to life with professional, engaging writing that resonates with your audience.</p>
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                            <i class="fas fa-envelope text-xl"></i>
                         </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <p>Aatiff.P@proton.me</p>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Email</h4>
+                            <a href="mailto:Aatiff.P@proton.me" class="text-accent hover:underline">Aatiff.P@proton.me</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <!-- <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div> -->
-                        <!-- <div class="contact-text">
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div> -->
-                    </div>
-                    <div class="contact-item">
-                        <!-- <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div> -->
-                        <!-- <div class="contact-text">
-                            <h4>Location</h4>
-                            <p>Based in New York, NY</p>
-                        </div> -->
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-medium-m"></i></a>
+                    
+                    <h4 class="font-bold mb-4">Connect with me</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon text-white text-xl w-10 h-10 rounded-full border border-white flex items-center justify-center hover:border-accent transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon text-white text-xl w-10 h-10 rounded-full border border-white flex items-center justify-center hover:border-accent transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon text-white text-xl w-10 h-10 rounded-full border border-white flex items-center justify-center hover:border-accent transition">
+                            <i class="fab fa-medium-m"></i>
+                        </a>
+                        <a href="#" class="social-icon text-white text-xl w-10 h-10 rounded-full border border-white flex items-center justify-center hover:border-accent transition">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+            </div>
+            
+            <div class="md:w-1/2 mt-12 md:mt-0">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">Let's Work Together</h3>
+                    <form action="https://formspree.io/f/xeokegbq" method="POST">
+                        <div class="mb-4">
+                            <label class="block text-gray-200 mb-2">Name</label>
+                            <input name="name" type="text" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-white" placeholder="Your name">
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                        <div class="mb-4">
+                            <label class="block text-gray-200 mb-2">Email</label>
+                            <input name="email" type="email" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-white" placeholder="Your email">
                         </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject">
+                        <div class="mb-4">
+                            <label class="block text-gray-200 mb-2">Project Type</label>
+                            <select name="project_type" class="w-full bg-black border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-white">
+                                <option value="">Select a service</option>
+                                <option>Tech Writing</option>
+                                <option>SEO Writing</option>
+                                <option>Copywriting</option>
+                                <option>Editing & Proofreading</option>
+                                <option>Speech Writing</option>
+                                <option>Other</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <textarea placeholder="Tell me about your project" required></textarea>
+                        <div class="mb-6">
+                            <label class="block text-gray-200 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-white" placeholder="Tell me about your project"></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div> -->
+
+                        <!-- Optional: Disable CAPTCHA -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="w-full bg-accent text-primary py-3 px-6 rounded-lg font-bold hover:bg-white transition transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </form> 
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+    
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <!-- <a href="#" class="logo">Aatif<span>P</span></a> -->
-            <ul class="footer-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <!-- <li><a href="#">Privacy Policy</a></li> -->
-                <!-- <li><a href="#">Terms of Service</a></li> -->
-            </ul>
-            <p class="copyright">© 2025 Aatif.P. All rights reserved.</p>
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold">Aatif P</h3>
+                    <p class="mt-2 text-gray-300 max-w-sm">Delivering quality content with precision and creativity for all your writing needs.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#hero" class="text-gray-300 hover:text-accent transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-300 hover:text-accent transition">About</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-accent transition">Services</a></li>
+                            <li><a href="#portfolio" class="text-gray-300 hover:text-accent transition">Portfolio</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-accent transition">Blog</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-accent transition">Writing Tips</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-accent transition">Templates</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-accent transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-accent transition">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-center">© 2025 Aatif.P. All rights reserved.</p>
+                <!-- <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-accent social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent social-icon">
+                        <i class="fab fa-medium-m"></i> -->
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
